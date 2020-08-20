@@ -6,11 +6,6 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Source Code Pro:size=12:antialias=true:autohint=true";
-/* Spare fonts */
-static char *font2[] = {
-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
-};
 
 static int borderpx = 2;
 
@@ -106,30 +101,32 @@ float alpha = 0.8;
 static const char *colorname[] = {
 
   /* 8 normal colors */
-  [0] = "#1e263b", /* black   */
-  [1] = "#ff4662", /* red     */
-  [2] = "#20ed00", /* green   */
-  [3] = "#f2c56c", /* yellow  */
-  [4] = "#00a9ff", /* blue    */
-  [5] = "#f076ff", /* magenta */
-  [6] = "#34ecff", /* cyan    */
-  [7] = "#ffffff", /* white   */
+  "#1e263b", /* black   */
+  "#ff4662", /* red     */
+  "#20ed00", /* green   */
+  "#f2c56c", /* yellow  */
+  "#00a9ff", /* blue    */
+  "#f076ff", /* magenta */
+  "#34ecff", /* cyan    */
+  "#ffffff", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#666666", /* black   */
-  [9]  = "#fd364a", /* red     */
-  [10] = "#aeff00", /* green   */
-  [11] = "#ffc700", /* yellow  */
-  [12] = "#0094ff", /* blue    */
-  [13] = "#ed27ff", /* magenta */
-  [14] = "#00faff", /* cyan    */
-  [15] = "#ffffff", /* white   */
+   "#666666", /* black   */
+   "#fd364a", /* red     */
+   "#aeff00", /* green   */
+   "#ffc700", /* yellow  */
+   "#0094ff", /* blue    */
+   "#ed27ff", /* magenta */
+   "#00faff", /* cyan    */
+   "#ffffff", /* white   */
 
-  /* special colors */
-  [256] = "#ffffff", /* background */
-  [257] = "#000000", /* foreground */
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+	"black",
 };
-
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
@@ -138,7 +135,6 @@ unsigned int defaultfg = 7;
 unsigned int defaultbg = 258;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
-
 /*
  * Default shape of cursor
  * 2: Block ("█")
