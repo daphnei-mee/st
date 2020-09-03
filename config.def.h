@@ -6,8 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Source Code Pro:size=12:antialias=true:autohint=true";
-
-static int borderpx = 2;
+static int borderpx = 3;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -127,6 +126,7 @@ static const char *colorname[] = {
 	"#555555",
 	"black",
 };
+
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
@@ -135,6 +135,7 @@ unsigned int defaultfg = 7;
 unsigned int defaultbg = 258;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
+
 /*
  * Default shape of cursor
  * 2: Block ("█")
@@ -175,13 +176,10 @@ static uint forcemousemod = ShiftMask;
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
  */
-const unsigned int mousescrollincrement = 2;
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ Button4,              ShiftMask, kscrollup,      {.i =  mousescrollincrement} },
-	{ Button5,              ShiftMask, kscrolldown,    {.i =  mousescrollincrement} },
-	{ ShiftMask,            Button4, kscrollup,      {.i = 5} },
-	{ ShiftMask,            Button5, kscrolldown,    {.i = 5} },
+	{ ShiftMask,            Button4, kscrollup,      {.i = 3} },
+	{ ShiftMask,            Button5, kscrolldown,    {.i = 3} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
